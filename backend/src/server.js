@@ -8,14 +8,14 @@ const taskRoutes = require('./routes/taskRoutes');
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
-
-// ✅ Root route (IMPORTANT for Railway)
+// ✅ Root route (IMPORTANT for Railway) - moved to top
 app.get('/', (req, res) => {
   console.log('DEBUG: Root route was accessed!');
   res.send('Server is running 🚀');
 });
+
+app.use(cors());
+app.use(express.json());
 
 // Routes
 app.use('/api/auth', authRoutes);
