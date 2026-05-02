@@ -13,6 +13,7 @@ app.use(express.json());
 
 // ✅ Root route (IMPORTANT for Railway)
 app.get('/', (req, res) => {
+  console.log('DEBUG: Root route was accessed!');
   res.send('Server is running 🚀');
 });
 
